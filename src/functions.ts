@@ -35,6 +35,16 @@ function fill(color: string) {
     canvas_context.fillStyle = color;
     canvas_context.fill();
 }
+// draws the lines to create the snowflake
+function line( origin_x:number, origin_y:number, end_x:number, end_y:number){
+
+    canvas_context.moveTo( origin_x, origin_y);
+    canvas_context.lineTo(end_x, end_y)
+    canvas_context.stroke();
+
+
+}
+
 
 function random(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -50,3 +60,4 @@ function dist(x1: number, y1: number, x2: number, y2: number): number {
 
     return distance;
 }
+

@@ -42,7 +42,7 @@ function setup() {
         /* TODO OPTIONAL - make the balls a random color */
     }
     for (let i = 0; i < numBubbles; i++) {
-        bubbles[i] = new Bubbles(random(25, width - 25), random(25, height - 25), random(10, 50));
+        bubbles[i] = new Bubble(random(25, width - 25), random(25, height - 25), random(10, 50));
         /* TODO REQUIRED - add the bubbles */
     }
     for (/* TODO REQUIRED */) {
