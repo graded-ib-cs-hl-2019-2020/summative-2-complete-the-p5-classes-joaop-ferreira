@@ -4,6 +4,9 @@ let canvas_context: CanvasRenderingContext2D;
 let width: number;
 let height: number;
 
+let mouseX: number;
+let mouseY: number;
+
 function createCanvas(width: number, height: number) {
     canvas = <HTMLCanvasElement>document.getElementById('canvas');
 
@@ -33,10 +36,17 @@ function fill(color: string) {
     canvas_context.fill();
 }
 
-
-
-
 function random(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+// returns the distance between two points
+
+function dist(x1: number, y1: number, x2: number, y2: number): number {
+    let diff_x: number = x1 - x2;
+    let diff_y: number = y1 - y2;
+
+    let distance = Math.sqrt(diff_x * diff_x + diff_y * diff_y);
+
+    return distance;
+}

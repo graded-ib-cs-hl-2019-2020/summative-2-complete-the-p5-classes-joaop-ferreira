@@ -27,11 +27,12 @@ export class Ball {
   public go() {
     this.stopped = false;
   }
-
+  //you have to create the object before you actually color it so the ellipse goes first.
   public draw(): void {
+    ellipse(this.x, this.y, this.size);
     fill(this.color);
     stroke(this.borderColor);
-    ellipse(this.x, this.y, this.size);
+
   }
 
   public move(): void {
