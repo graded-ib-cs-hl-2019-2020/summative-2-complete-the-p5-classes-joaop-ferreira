@@ -18,6 +18,16 @@ function createCanvas(width: number, height: number) {
 
     canvas_context = <CanvasRenderingContext2D>canvas.getContext("2d");
 }
+
+//gives a background to the canvas
+function background( color:string ){
+
+    canvas_context.globalCompositeOperation = 'destination-over';
+    canvas_context.fillStyle = color;
+    canvas_context.fillRect(0, 0, canvas.width, canvas.height);
+    canvas_context.globalCompositeOperation = 'source-over'
+
+}
 //configures the color of the border of an object
 function stroke(color: string) {
     canvas_context.strokeStyle = color;
@@ -41,7 +51,6 @@ function line( origin_x:number, origin_y:number, end_x:number, end_y:number){
     canvas_context.moveTo( origin_x, origin_y);
     canvas_context.lineTo(end_x, end_y)
     canvas_context.stroke();
-
 
 }
 

@@ -40,14 +40,16 @@ export class Snowflake {
     private doBorderBehavior() {
         if (this.x < -this.size / 2) {
             this.x = width + this.size / 2;
+
         } else if (this.x > width + this.size / 2) {
             this.x = -this.size / 2;
         }
-        if (this.y < -this.size / 2) {
-            this.y = height + this.size / 2;
-        } else if (this.y > height + this.size / 2) {
-            this.y = -this.size / 2;
+        if (this.y > this.size / 2) {
+            this.y = this.size / 2;
+
+        } else if (this.y < this.size / 2) {
+            this.y = this.size / 2;
         }
     }
 }
-}
+
