@@ -37,7 +37,7 @@ function setup() {
     let numBalls = 10;
     let numFlakes = 10;
     createCanvas(500, 500);
-    for (/* TODO REQUIRED - fill this in*/) {
+    for (let i = 0; i < numBalls; i++) {
         balls[i] = new Ball(random(25, width - 25), random(25, height - 25), random(10, 50));
         /* TODO OPTIONAL - make the balls a random color */
     }
