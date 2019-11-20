@@ -55,15 +55,15 @@ function line( origin_x:number, origin_y:number, end_x:number, end_y:number){
 }
 
 
-function random(min: number, max: number): number {
-    return Math.floor(Math.random() * (max - min + 1) + min);
+function random(minimum: number, maximum: number): number {
+    return Math.floor(Math.random() * (maximum - minimum + 1) + minimum);
 }
 
 // returns the distance between two points
 
-function dist(x1: number, y1: number, x2: number, y2: number): number {
-    let diff_x: number = x1 - x2;
-    let diff_y: number = y1 - y2;
+function dist(px1: number, py1: number, px2: number, py2: number): number {
+    let diff_x: number = px1 - px2;
+    let diff_y: number = py1 - py2;
 
     let distance = Math.sqrt(diff_x * diff_x + diff_y * diff_y);
 
