@@ -27,29 +27,30 @@ import { Ball } from "./modules/ball.js";
 import { Bubble } from "./modules/bubble.js";
 import { Snowflake } from "./modules/snowflakes.js";
 
+let numBubbles = 10;
+let numBalls = 10;
+let numFlakes = 10;
+
 let balls: Ball[] = [];
 let snowflakes: Snowflake[] = [];
 let bubbles: Bubble[] = [];
 let clickedIndex = -1;
 
-let numBubbles = 10;
-let numBalls = 10;
-let numFlakes = 10;
+
 
 function setup() {
 
     createCanvas(500, 500);
     for (let i = 0; i < numBalls; i++) {
-        balls[i] = new Ball(random(25, width - 25), random(25, height - 25), random(10, 50));
-        /* TODO OPTIONAL - make the balls a random color */
+        balls.push(new Ball(random(25, width - 25), random(25, height - 25), random(10, 50)));
     }
     for (let i = 0; i < numBubbles; i++) {
-        bubbles[i] = new Bubble(random(25, width - 25), random(25, height - 25), random(10, 50));
-        /* TODO REQUIRED - add the bubbles */
+        bubbles.push(new Bubble(random(25, width - 25), random(25, height - 25), random(10, 50)));
+
     }
     for (let i = 0; i < numFlakes; i++) {
-        snowflakes[i] = new Snowflake(random(25, width - 25), random(25, height - 25), random(10, 50));
-        /* TODO REQUIRED - add the snowflakes */
+        snowflakes.push(new Snowflake(random(25, width - 25), random(25, height - 25), random(5, 20)));
+
     }
 }
 

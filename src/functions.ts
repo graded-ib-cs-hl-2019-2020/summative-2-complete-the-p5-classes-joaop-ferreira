@@ -1,3 +1,4 @@
+
 let canvas: HTMLCanvasElement;
 let canvas_context: CanvasRenderingContext2D;
 
@@ -20,7 +21,7 @@ function createCanvas(width: number, height: number) {
 }
 
 //gives a background to the canvas
-function background( color:string ){
+function background(color: string) {
 
     canvas_context.globalCompositeOperation = 'destination-over';
     canvas_context.fillStyle = color;
@@ -46,9 +47,9 @@ function fill(color: string) {
     canvas_context.fill();
 }
 // draws the lines to create the snowflake
-function line( origin_x:number, origin_y:number, end_x:number, end_y:number){
+function line(origin_x: number, origin_y: number, end_x: number, end_y: number) {
 
-    canvas_context.moveTo( origin_x, origin_y);
+    canvas_context.moveTo(origin_x, origin_y);
     canvas_context.lineTo(end_x, end_y)
     canvas_context.stroke();
 

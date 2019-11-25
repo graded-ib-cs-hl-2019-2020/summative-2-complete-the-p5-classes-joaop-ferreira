@@ -3,11 +3,11 @@ export class Bubble {
     private x: number;
     private y: number;
     private size: number;
-    private xSpeed: number = random(-3, 3);
-    private ySpeed: number = random(-3, 3);
+    private xSpeed: number = random(-1, 1);
+    private ySpeed: number = random(-3, -1);
     private stopped: boolean = false;
     private color: string = "cyan";
-    private borderColor: string = "yellow";
+    private borderColor: string = "white";
 
     // function creates object of the class "Bubble"
     constructor(x: number, y: number, size: number) {
@@ -26,15 +26,17 @@ export class Bubble {
     }
     // Draws the bubbles with the given colors and dimensions
     public draw(): void {
-        ellipse(this.x, this.y, this.size);
+
         fill(this.color);
         stroke(this.borderColor);
+        ellipse(this.x, this.y, this.size);
 
     }
 
     public move(): void {
         if (this.stopped == false) {
-            this.y = this.y - this.ySpeed;
+            this.x = this.x + this.xSpeed;
+            this.y = this.y + this.ySpeed;
             this.doBorderBehavior();
 
             /* TODO REQUIRED - Make the bubbles move as long as they aren't stopped. Model after ball behavior. */
@@ -48,16 +50,23 @@ export class Bubble {
 
     /* This border behavior implements a wrap, so bubbles will flip over to the other side */
     private doBorderBehavior() {
-        if (this.x < -this.size / 2) {
+
+
+
+        if (this.size > 0 && this.x < -this.size / 2) {
             this.x = width + this.size / 2;
-        } else if (this.x > width + this.size / 2) {
+        }
+        else if (this.size > 0 && this.x > width + this.size) {
             this.x = -this.size / 2;
         }
-        if (this.y < -this.size / 2) {
+        if (this.size > 0 && this.y < -this.size / 2) {
             this.y = height + this.size / 2;
-        } else if (this.y > height + this.size / 2) {
-            this.y = -this.size / 2;
+        }
+        else if (this.size > 0 && this.y > height + this.size / 2) {
+            this.y = -this.size / 2
         }
     }
+
 }
+
 
