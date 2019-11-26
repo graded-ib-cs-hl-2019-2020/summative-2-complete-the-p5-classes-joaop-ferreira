@@ -6,7 +6,7 @@ export class Bubble {
     private xSpeed: number = random(-1, 1);
     private ySpeed: number = random(-3, -1);
     private stopped: boolean = false;
-    private color: string = "cyan";
+    private color: string = "#e0fffe";
     private borderColor: string = "white";
 
     // function creates object of the class "Bubble"
