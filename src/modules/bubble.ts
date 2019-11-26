@@ -9,11 +9,15 @@ export class Bubble {
     private color: string = "#e0fffe";
     private borderColor: string = "white";
 
+    private wind: number = 0;
+
     // function creates object of the class "Bubble"
-    constructor(x: number, y: number, size: number) {
+    constructor(x: number, y: number, size: number, color: string, borderColor: string) {
         this.x = x;
         this.y = y;
         this.size = size;
+        this.color = color;
+        this.borderColor = borderColor;
     }
     /* TODO REQUIRED - What's missing here? Add it! */
 
@@ -33,9 +37,13 @@ export class Bubble {
 
     }
 
+    public set_wind(windValue: number) {
+        this.wind = windValue;
+    }
+
     public move(): void {
         if (this.stopped == false) {
-            this.x = this.x + this.xSpeed;
+            this.x = this.x + this.xSpeed + this.wind;
             this.y = this.y + this.ySpeed;
             this.doBorderBehavior();
 

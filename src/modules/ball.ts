@@ -10,11 +10,14 @@ export class Ball {
   private borderColor: string = "black";
 
   /* TODO REQUIRED - add accessors and mutators for x, y, size, color, and borderColor */
-  constructor(x: number, y: number, size: number) {
+  constructor(x: number, y: number, size: number, color: string, bordercolor: string) {
 
     this.x = x;
     this.y = y;
     this.size = size;
+    this.color = color;
+    this.borderColor = bordercolor;
+
 
     /* TODO REQUIRED = Build your constructor */
     /* TODO OPTIONAL - add optional parameters to set color and borderColor on creation of the object */

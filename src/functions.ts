@@ -70,9 +70,3 @@ function dist(px1: number, py1: number, px2: number, py2: number): number {
 
     return distance;
 }
-
-// Wind and Gravity simulation
-
-// Gets the range element to control the wind
-let wind_range = document.getElementById("range_wind") as HTMLInputElement;
-let wind_label = document.getElementById("wind_value");

@@ -36,22 +36,53 @@ let snowflakes: Snowflake[] = [];
 let bubbles: Bubble[] = [];
 let clickedIndex = -1;
 
+// Wind and Gravity simulation
 
+// Gets the range element to control the wind
+let windRange = document.getElementById("wind_slider") as HTMLInputElement;
+let windLabel = document.getElementById("wind_value") as HTMLElement;
+
+// This variable will store the value from wind slider(values were too big so I divided them by 10)
+let windForce: number = Number(windRange.value) / 10;
+windRange.addEventListener("change", onWind_Change, true);
+function onWind_Change() {
+    // gets sliders values
+    windForce = Number(windRange.value) / 10;
+    console.log("a" + windForce);
+    // updates the sliders label
+    windLabel.innerText = "wind force:" + windForce;
+}
+
+// Gets the range element to control the wind
+let gravityRange = document.getElementById("gravity_slider") as HTMLInputElement;
+let gravityLabel = document.getElementById("gravity_value") as HTMLElement;
+
+// This variable will store the value from wind slider(values were too big so I divided them by 10)
+let gravityForce: number = Number(gravityRange.value) / 10;
+gravityRange.addEventListener("change", onGravityChange, true);
+function onGravityChange() {
+    // gets sliders values
+    gravityForce = Number(gravityRange.value) / 10;
+    console.log("a" + gravityForce);
+    // updates the sliders label
+    gravityLabel.innerText = "gravity force:" + gravityForce;
+}
 
 function setup() {
 
     createCanvas(500, 500);
     for (let i = 0; i < numBalls; i++) {
-        balls.push(new Ball(random(25, width - 25), random(25, height - 25), random(10, 50)));
+        balls.push(new Ball(random(25, width - 25), random(25, height - 25), random(10, 50), "red", "black"));
     }
     for (let i = 0; i < numBubbles; i++) {
-        bubbles.push(new Bubble(random(25, width - 25), random(25, height - 25), random(10, 50)));
+        bubbles.push(new Bubble(random(25, width - 25), random(25, height - 25), random(10, 50), "#e0fffe", "white"));
 
     }
     for (let i = 0; i < numFlakes; i++) {
-        snowflakes.push(new Snowflake(random(25, width - 25), random(25, height - 25), random(5, 20)));
+        snowflakes.push(new Snowflake(random(25, width - 25), random(25, height - 25), random(5, 20), "white"));
 
     }
+
 }
 
 function draw() {
@@ -62,6 +93,8 @@ function draw() {
     }
 
     for (let i = 0; i < numBubbles; i++) {
+        bubbles[i].set_wind(windForce);
+
         bubbles[i].draw();
         bubbles[i].move();
     }
@@ -70,6 +103,9 @@ function draw() {
         snowflakes[i].draw();
         snowflakes[i].move();
     }
+
+    //onWind_Change();
+    console.log("called onwind");
     /* TODO REQUIRED - Draw and move the bubbles and flakes */
 }
 

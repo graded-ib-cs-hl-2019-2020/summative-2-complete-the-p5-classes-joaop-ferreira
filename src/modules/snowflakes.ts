@@ -6,13 +6,17 @@ export class Snowflake {
     private stopped: boolean = false;
     private ySpeed: number = 1;
     private xSpeed: number = random(-1, 1);
+
+    private gravity: number = 0;
+
     /* TODO REQUIRED - Make this work. The snowflakes should drift slowly downward. I have implemented only the draw() method.
      * You can base the rest of the behavior after bubbles, with only a few changes. */
-    constructor(x: number, y: number, size: number) {
+    constructor(x: number, y: number, size: number, color: string) {
 
         this.x = x;
         this.y = y;
         this.size = size;
+        this.color = color;
     }
     public stop() {
         this.stopped = true;
@@ -21,12 +25,14 @@ export class Snowflake {
     public go() {
         this.stopped = false;
     }
-
+    public set_gravity(gravity_value: number) {
+        this.gravity = gravity_value
+    }
     public move(): void {
         if (this.stopped == false) {
 
             this.x = this.x + this.xSpeed;
-            this.y = this.y + this.ySpeed;
+            this.y = this.y + this.ySpeed - this.gravity;
         }
         this.doBorderBehavior();
 
