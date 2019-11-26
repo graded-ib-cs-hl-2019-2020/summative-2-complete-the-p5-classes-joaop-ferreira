@@ -93,13 +93,15 @@ function draw() {
     }
 
     for (let i = 0; i < numBubbles; i++) {
+        //updates the winds value
         bubbles[i].set_wind(windForce);
-
         bubbles[i].draw();
         bubbles[i].move();
     }
 
     for (let i = 0; i < numFlakes; i++) {
+        //Updates the gravities value
+        snowflakes[i].set_gravity(gravityForce);
         snowflakes[i].draw();
         snowflakes[i].move();
     }
