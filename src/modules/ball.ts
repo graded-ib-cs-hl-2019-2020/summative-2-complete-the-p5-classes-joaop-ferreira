@@ -30,7 +30,7 @@ export class Ball {
   public go() {
     this.stopped = false;
   }
-  //you have to create the object before you actually color it so the ellipse goes first.
+  // you have to create the object before you actually color it so the ellipse goes first.
   public draw(): void {
 
     fill(this.color);

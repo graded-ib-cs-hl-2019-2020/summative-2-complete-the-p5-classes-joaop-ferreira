@@ -2,12 +2,6 @@
 let canvas: HTMLCanvasElement;
 let canvas_context: CanvasRenderingContext2D;
 
-let width: number;
-let height: number;
-
-let mouseX: number;
-let mouseY: number;
-
 function createCanvas(width: number, height: number) {
     canvas = <HTMLCanvasElement>document.getElementById('canvas');
 
