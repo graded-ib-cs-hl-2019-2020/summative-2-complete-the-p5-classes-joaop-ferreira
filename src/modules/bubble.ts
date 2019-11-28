@@ -12,7 +12,7 @@ export class Bubble {
     private wind: number = 0;
 
     // function creates object of the class "Bubble"
-    constructor(x: number, y: number, size: number, color: string, borderColor: string) {
+    constructor(x: number, y: number, size: number, color: string = "#FFFFFF80", borderColor: string) {
         this.x = x;
         this.y = y;
         this.size = size;
